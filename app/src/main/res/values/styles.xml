@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="MainStyle" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/mainColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/BackColor</item>
+        <item name="android:textColor">@color/Dark_jungle_green</item>
+
+    </style>
+    <style name="ThemeActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background"> @color/White </item>
+        <!-- Support library compatibility -->
+        <item name="background">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+    </style>
+</resources>

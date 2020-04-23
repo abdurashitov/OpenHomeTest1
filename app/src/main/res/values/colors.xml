@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="mainColor">#49CF90</color>
+    <color name="BackColor">#FFFFFF</color>
+    <color name="Jade">#0c9e7b</color>
+    <color name="Jade1">#0bb66e</color>
+    <color name="Caribbean_green">#09c598</color>
+    <color name="Manatee">#979797</color>
+    <color name="Gainsboro">#dadada</color>
+    <color name="White">#ffffff</color>Dark jungle green
+    <color name="Dark_jungle_green">#272727</color>
+</resources>

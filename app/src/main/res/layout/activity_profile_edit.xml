@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="clip_horizontal|center|clip_vertical|center_horizontal|fill_vertical"
+    tools:context=".ProfileEditActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="fill"
+        android:maxHeight="100dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <EditText
+        android:id="@+id/_name"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:foregroundGravity="center"
+        android:inputType="textPersonName"
+        android:text="Введите имя" />
+
+    <EditText
+        android:id="@+id/_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="фамилия" />
+
+    <EditText
+        android:id="@+id/_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        android:text="Сохранить" />
+
+
+</LinearLayout>
