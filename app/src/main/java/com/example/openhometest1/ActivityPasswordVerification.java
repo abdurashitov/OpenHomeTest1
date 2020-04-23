@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import br.com.sapereaude.maskedEditText.MaskedEditText;
+
 public class ActivityPasswordVerification extends AppCompatActivity {
 
-    EditText editCode;
+    MaskedEditText editCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,8 +19,8 @@ public class ActivityPasswordVerification extends AppCompatActivity {
         editCode = findViewById(R.id.code);
     }
     public void checkCode(View v){
-        String code = editCode.getText().toString();
-        if (code.length() == 6){
+        String code = editCode.getRawText();
+        if (code.length() == 5){
             //отправляем на сервер для проверки
             Intent intent = new Intent(ActivityPasswordVerification.this, ProfileActivity.class);
             startActivity(intent);

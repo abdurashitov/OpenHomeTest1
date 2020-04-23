@@ -24,7 +24,7 @@ public class UserProfileActivity extends AppCompatActivity {
         w_tel = findViewById(R.id._tel);
 
     }
-    public void Redact(View view) {
+    public void redact(View view) {
         Intent intent = new Intent(UserProfileActivity.this, ProfileEditActivity.class);
         startActivity(intent);
     }

@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        demo();
         load();
 
     }
@@ -85,5 +86,13 @@ public class HomeActivity extends AppCompatActivity {
     public void openUserProfile(View v) {
         Intent intent = new Intent(this, UserProfileActivity.class);
         startActivity(intent);
+    }
+    public void demo(){
+        states.add(new Home ("demo1", "demo1", "demo1"));
+        states.add(new Home ("demo2", "demo2", "demo2"));
+        states.add(new Home ("demo3", "demo3", "demo3"));
+        states.add(new Home ("demo4", "demo4", "demo4"));
+        states.add(new Home ("demo5", "demo5", "demo5"));
+        SetView();
     }
 }

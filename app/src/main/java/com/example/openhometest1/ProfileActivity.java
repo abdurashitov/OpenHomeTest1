@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import java.io.IOException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ProfileActivity extends AppCompatActivity {
     static final int GALLERY_REQUEST = 1;
 
@@ -36,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
         Bitmap bitmap = null;
-        ImageView imageView = (ImageView) findViewById(R.id.image);
+        CircleImageView imageView = (CircleImageView) findViewById(R.id.circleImageView);
 
         switch (requestCode) {
             case GALLERY_REQUEST:

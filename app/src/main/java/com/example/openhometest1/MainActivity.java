@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
     public void checkRule(View v){
         if (rule.isChecked()){
             sendNumberPhone.setEnabled(true);
-            Toast.makeText(this, "rule ok", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "rule ok", Toast.LENGTH_SHORT).show();
         }
         else{
             sendNumberPhone.setEnabled(false);
-            Toast.makeText(this, "rule fall", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "rule fall", Toast.LENGTH_SHORT).show();
         }
     }
     public void readRule(View v){
@@ -67,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
     public void SendNumber(View v){
         String phoneNumber = phone.getRawText();
         if(phoneNumber.length()==10){
-            Toast.makeText(this, "правильный номер", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "правильный номер", Toast.LENGTH_SHORT).show();
             //запрос на сервер
             Intent intent = new Intent(MainActivity.this, ActivityPasswordVerification.class);
             startActivity(intent);
         }
-        else
-            Toast.makeText(this, "неправильный номер", Toast.LENGTH_SHORT).show();
+        //else
+            //Toast.makeText(this, "неправильный номер", Toast.LENGTH_SHORT).show();
     }
 }
