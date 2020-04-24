@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/White"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -52,6 +53,7 @@
         android:layout_marginBottom="10dp"
         android:hint="1234567890"
         android:inputType="phone"
+        android:onClick="setNumber"
         android:textColor="@color/Jade1"
         android:textColorHint="#746F6F"
         android:textCursorDrawable="@color/Dark_jungle_green"
@@ -78,7 +80,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_register_send"
-        android:enabled="false"
         android:onClick="SendNumber"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
@@ -119,6 +120,17 @@
             android:textColor="@color/mainColor"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/alert_text"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/alert_text"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/red_orange"
+        android:visibility="invisible" />
 
 
 </LinearLayout>

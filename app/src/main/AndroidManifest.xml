@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MainStyle">
-        <activity android:name=".ProfileEditActivity"></activity>
+        <activity android:name=".NewHomeActivity"></activity>
+        <activity android:name=".ProfileEditActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".ScrinHomeActivity" />
         <activity android:name=".ProfileActivity" />

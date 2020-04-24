@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -95,4 +93,9 @@ public class HomeActivity extends AppCompatActivity {
         states.add(new Home ("demo5", "demo5", "demo5"));
         SetView();
     }
+    public void next(View v){
+        Intent intent = new Intent(HomeActivity.this, NewHomeActivity.class);
+        startActivity(intent);
+    }
+
 }
