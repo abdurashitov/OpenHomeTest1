@@ -1,14 +1,16 @@
 package com.example.openhometest1;
 
-public class Home {
+import java.io.Serializable;
+
+public class Home implements Serializable {
     private String name;
     private String value;
-    private String address;
+    private String data;
 
-    public Home(String name, String value, String address) {
+    public Home(String name, String value, String data) {
         this.name = name;
         this.value = value;
-        this.address = address;
+        this.data = data;
     }
 
     public String getName() {
@@ -24,7 +26,7 @@ public class Home {
     }
 
     public String getAddress() {
-        return address;
+        return data;
     }
 
     public void setValue(String value) {

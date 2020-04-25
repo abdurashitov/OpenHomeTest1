@@ -33,7 +33,6 @@
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:onClick="openUser1Profile"
         android:src="@drawable/c2bgaoydqjo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
@@ -46,21 +45,32 @@
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:onClick="openUser2Profile"
         android:src="@drawable/c2bgaoydqjo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
 
     </de.hdodenhof.circleimageview.CircleImageView>
 
+    <TextView
+        android:id="@+id/id_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textIsSelectable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+        tools:text="Home ID" />
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView">
+        app:layout_constraintTop_toBottomOf="@+id/id_home">
 
         <Button
             android:id="@+id/buttonGenerateDogovor"
@@ -68,7 +78,7 @@
             android:layout_height="35dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_register_send"
-            android:onClick="continue_btn"
+            android:onClick="buttonGenerateDogovor"
             android:text="Сгенерировать договор "
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -80,7 +90,7 @@
             android:layout_height="35dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_register_send"
-            android:onClick="continue_btn"
+            android:onClick="laoadNewShablon"
             android:text="Загрузить шаблон договора"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -92,7 +102,7 @@
             android:layout_height="35dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_register_send"
-            android:onClick="continue_btn"
+            android:onClick="laoadNewDogovor"
             android:text="Загрузить готовый договор"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -104,7 +114,7 @@
             android:layout_height="35dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_register_send"
-            android:onClick="continue_btn"
+            android:onClick="CloseDogovor"
             android:text="Расторгнуть договор"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -116,7 +126,7 @@
             android:layout_height="35dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_register_send"
-            android:onClick="continue_btn"
+            android:onClick="btnOplata"
             android:text="Оплатить"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"

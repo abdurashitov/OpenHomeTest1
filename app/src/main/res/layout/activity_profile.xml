@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="270dp">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -51,9 +51,12 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:text="Введите ваши данные "
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -100,23 +103,27 @@
         android:paddingLeft="10dp"
         android:textColor="#000000"
         android:textColorHint="@color/Manatee"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:visibility="gone" />
 
-    <EditText
+    <br.com.sapereaude.maskedEditText.MaskedEditText
         android:id="@+id/editText5"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginBottom="30dp"
         android:background="@color/White_smoke"
         android:drawableLeft="@drawable/ic_calendar"
-        android:hint="24.04.2020"
-        android:textAlignment="center"
+        android:hint="24042020"
         android:inputType="date"
-        android:paddingLeft="10dp"
+        android:maxEms="12"
+        android:maxLength="12"
 
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="@color/Manatee"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:mask="##.##.####" />
 
     <Button
         android:id="@+id/buttonRegister"

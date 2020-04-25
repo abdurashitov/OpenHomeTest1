@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,9 +26,10 @@ import org.json.JSONObject;
 import br.com.sapereaude.maskedEditText.MaskedEditText;
 
 public class ActivityPasswordVerification extends AppCompatActivity {
-    Intent intent;
+    Intent intent, intent1;
     MaskedEditText editCode;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_verification);
@@ -42,8 +42,10 @@ public class ActivityPasswordVerification extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         intent = getIntent();
+        intent1 = new Intent(ActivityPasswordVerification.this, ProfileActivity.class);
+        //postPhone(intent.getStringExtra("phone"));
 
-        postPhone(intent.getStringExtra("phone"));
+
     }
     public void back (View v){
         onBackPressed();
@@ -51,12 +53,10 @@ public class ActivityPasswordVerification extends AppCompatActivity {
     public void checkCode(View v){
         String code = editCode.getRawText();
         if (code.length() == 6){
-            String[] res = postPhoneVerefication(intent.getStringExtra("phone"), editCode.getRawText());
-            Log.d("res[0]", ""+res[0]);
-            //отправляем на сервер для проверки
-            Intent intent = new Intent(ActivityPasswordVerification.this, ProfileActivity.class);
-            intent.putExtra("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc2ODdkMGRlZjQ5MTM2ZGM2YjNmOGQiLCJpYXQiOjE1ODQ5MDk3MjZ9.1s-it-HR50dr54AV72agBmYAgjWkzK3h-dA3epdMnyk");
-            startActivity(intent);
+            //postPhoneVerefication(intent.getStringExtra("phone"), editCode.getRawText());
+            intent1.putExtra("phone",intent.getStringExtra("phone"));
+            intent1.putExtra("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc2ODdkMGRlZjQ5MTM2ZGM2YjNmOGQiLCJpYXQiOjE1ODQ5MDk3MjZ9.1s-it-HR50dr54AV72agBmYAgjWkzK3h-dA3epdMnyk");
+            startActivity(intent1);
         }
     }
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
@@ -100,8 +100,8 @@ public class ActivityPasswordVerification extends AppCompatActivity {
             Log.e("TAG", e.toString());
         }
     }
-    public String[] postPhoneVerefication(String number, String virefication){
-        final String[] respons = new String[1];
+
+    public void postPhoneVerefication(String number, String virefication){
         try {
             /** json object parameter**/
 
@@ -112,17 +112,20 @@ public class ActivityPasswordVerification extends AppCompatActivity {
             Log.e("jsonObject params", jsonObject1.toString() + "");
             /**URL */
 
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject1, new Response.Listener<JSONObject>() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PUT, url, jsonObject1, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
-                    respons[0] = jsonObject.toString();
-                    Log.e("res1", "Response " + jsonObject.toString());
+                    try {
+                    Log.e("res1", "Response " + jsonObject.getString("token"));
 
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
-                    respons[0] = volleyError.toString();
+                    //Toast.makeText(ActivityPasswordVerification.this, "Неверный пароль", Toast.LENGTH_SHORT).show();
                     Log.e("TAG1", volleyError.toString());
                 }
             });
@@ -135,7 +138,6 @@ public class ActivityPasswordVerification extends AppCompatActivity {
         catch (Exception e) {
             Log.e("TAG4", e.toString());
         }
-        return respons;
     }
 }
 

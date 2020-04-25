@@ -32,6 +32,7 @@
 
             <EditText
                 android:id="@+id/add_home_editText"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -47,7 +48,8 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText2"
+                android:id="@+id/add_home_adress"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -60,10 +62,11 @@
                 android:paddingLeft="10dp"
                 android:textColor="#000000"
                 android:textColorHint="@color/Manatee"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
 
             <EditText
-                android:id="@+id/add_home_editText3"
+                android:id="@+id/add_home_vid"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -71,15 +74,31 @@
                 android:background="@color/White_smoke"
                 android:ems="10"
                 android:fontFamily="@font/montserrat_alternates_medium"
-                android:hint="Вид дома / квартиры"
-                android:inputType="textPersonName"
+                android:hint="Площадь"
+                android:inputType="number"
                 android:paddingLeft="10dp"
                 android:textColor="#000000"
                 android:textColorHint="@color/Manatee"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText4"
+                android:id="@+id/add_comnat"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="количество комнат"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/add_home_renter"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -101,7 +120,8 @@
                 android:background="@color/Gainsboro" />
 
             <EditText
-                android:id="@+id/add_home_editText5"
+                android:id="@+id/add_home_gaz"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -117,7 +137,8 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText6"
+                android:id="@+id/add_home_water"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -136,17 +157,19 @@
             android:layout_height="wrap_content"
 
             android:orientation="horizontal">
+
             <Button
-                android:id="@+id/add_com"
+                android:id="@+id/add_home_comunalka"
+
                 android:layout_width="150dp"
                 android:layout_height="40dp"
-                android:background="@drawable/button_register_send"
-                android:onClick="add_com"
-                android:text="Добавить поле "
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/button_register_send"
+                android:text="Добавить поле"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone" />
         </LinearLayout>
 
             <View
@@ -157,7 +180,8 @@
                 android:background="@color/Gainsboro" />
 
             <EditText
-                android:id="@+id/add_home_editText7"
+                android:id="@+id/add_home_arenda"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -173,7 +197,8 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText8"
+                android:id="@+id/add_home_price"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -189,7 +214,8 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText9"
+                android:id="@+id/add_home_summa"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -205,7 +231,8 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/add_home_editText10"
+                android:id="@+id/add_home_predoplata"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -231,7 +258,8 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/add_home_editText11"
+                android:id="@+id/add_home_data_oplata"
+
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -245,7 +273,8 @@
                 android:paddingLeft="10dp"
                 android:textColor="#000000"
                 android:textColorHint="@color/Manatee"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
             <Button
                 android:id="@+id/save_new_home"
                 android:layout_width="300dp"

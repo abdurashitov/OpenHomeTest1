@@ -12,28 +12,34 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE = 1;
     private final Context context;
-    private final List<Home> listRecyclerItem;
+    private final List<Apartments> listRecyclerItem;
+    private String name1;
+    private String data1;
+    private String price1;
+    private String token;
 
-    public RecyclerAdapter(Context context, List<Home> listRecyclerItem) {
+
+    public RecyclerAdapter(Context context, List<Apartments> listRecyclerItem) {
         this.context = context;
         this.listRecyclerItem = listRecyclerItem;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
-        private TextView oplata;
+        private TextView data;
         private TextView price;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
-            oplata = itemView.findViewById(R.id.oplata);
+            data = itemView.findViewById(R.id.data);
             price = itemView.findViewById(R.id.price);
         }
     }
@@ -59,17 +65,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             case TYPE:
             default:
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-                Home home = (Home) listRecyclerItem.get(i);
-                itemViewHolder.name.setText(home.getName());
-                itemViewHolder.oplata.setText(home.getAddress());
-                itemViewHolder.price.setText(home.getValue());
+                Apartments home = (Apartments) listRecyclerItem.get(i);
+                itemViewHolder.name.setText(home.title);
+                itemViewHolder.data.setText(home.date);
+                itemViewHolder.price.setText(home.getPrice());
         }
         viewHolder.itemView.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView textView1 = v.findViewById(R.id.name);
                 Intent intent = new Intent(context, ScrinHomeActivity.class);
-                intent.putExtra("name", textView1.getText());
+                intent.putExtra(Apartments.class.getSimpleName(), listRecyclerItem.get(i));
                 context.startActivity(intent);
                 Log.d("msg", ""+i);
             }
