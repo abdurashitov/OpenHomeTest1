@@ -1,65 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="clip_horizontal|center|clip_vertical|center_horizontal|fill_vertical"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".ProfileEditActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="fill"
-        android:maxHeight="100dp"
-        android:src="@drawable/ic_launcher_foreground" />
-
-    <EditText
-        android:id="@+id/_name"
-        android:layout_width="204dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:foregroundGravity="center"
-        android:inputType="textPersonName"
-        android:text="Введите имя" />
-
-    <EditText
-        android:id="@+id/_surname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:text="Name" />
-
-    <EditText
-        android:id="@+id/_lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:text="фамилия" />
-
-    <EditText
-        android:id="@+id/_tel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="phone" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_chevron_left"
+        android:onClick="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="188dp"
+        android:id="@+id/button4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/ic_sliders"
+        android:onClick="setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="onClick"
-        android:text="Сохранить" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/c2bgaoydqjo">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="Редактировать данные "
+            android:textAlignment="center"
+            android:textColor="@color/Dark_jungle_green" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:textAlignment="center"
+            android:text="+7 (978) 101 10 10" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="Эмма"
+            android:textColor="@color/Dark_jungle_green"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="Ватсон"
+            android:textColor="@color/Dark_jungle_green" />
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="Дуэр"
+            android:textColor="@color/Dark_jungle_green" />
+
+        <EditText
+            android:id="@+id/editTextData"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:hint="24.04.2020"
+            android:textAlignment="center"
+            android:paddingLeft="20dp"
+            android:text="24.04.2020"
+            android:textColor="@color/Dark_jungle_green" />
 
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="300dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="Контакты"
+            android:textColor="@color/Dark_jungle_green"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextMail"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="Name"
+            android:textColor="@color/Dark_jungle_green" />
+
+        <EditText
+            android:id="@+id/editTextTelegram"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/White_smoke"
+            android:fontFamily="@font/montserrat_light"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="Name"
+            android:textColor="@color/Dark_jungle_green" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_register_send"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:onClick="continue_btn"
+            android:text="Сохранить "
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

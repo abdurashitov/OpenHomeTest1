@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             if(rule.isChecked())
             {
                 Intent intent = new Intent(MainActivity.this, ActivityPasswordVerification.class);
+                intent.putExtra("phone" , "+7"+phoneNumber);
                 startActivity(intent);
             }
             else{

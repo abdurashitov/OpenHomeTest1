@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddHomeActivity">
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_chevron_left"
+        android:onClick="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/add_home_editText"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Название"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Адресс"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Вид дома / квартиры"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText4"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Кто проживает"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/Gainsboro" />
+
+            <EditText
+                android:id="@+id/add_home_editText5"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Газ"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText6"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Вода"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/add_com"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_register_send"
+                android:onClick="add_com"
+                android:text="Добавить поле "
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/Gainsboro" />
+
+            <EditText
+                android:id="@+id/add_home_editText7"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Срок аренды"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText8"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Цена"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText9"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Сумма залога(если была)"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText10"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Предоплата если была)"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:text="Дата оплаты жилья"
+                android:textColor="@color/Jade"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/add_home_editText11"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/White_smoke"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="дата оплаты"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/Manatee"
+                android:textSize="14sp"/>
+            <Button
+                android:id="@+id/save_new_home"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_register_send"
+                android:onClick="add_new_home"
+                android:text="Сохранить "
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

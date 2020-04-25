@@ -26,17 +26,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView adress;
         private TextView name;
         private TextView oplata;
         private TextView price;
 
-
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
-            adress = itemView.findViewById(R.id.adress);
             oplata = itemView.findViewById(R.id.oplata);
             price = itemView.findViewById(R.id.price);
         }
@@ -62,16 +58,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         switch (viewType) {
             case TYPE:
             default:
-
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
                 Home home = (Home) listRecyclerItem.get(i);
                 itemViewHolder.name.setText(home.getName());
-                itemViewHolder.adress.setText(home.getAddress());
-                itemViewHolder.oplata.setText("demo");
+                itemViewHolder.oplata.setText(home.getAddress());
                 itemViewHolder.price.setText(home.getValue());
-
         }
-
         viewHolder.itemView.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {

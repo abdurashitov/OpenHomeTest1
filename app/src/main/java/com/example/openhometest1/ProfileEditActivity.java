@@ -29,7 +29,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.circleImageView);
         imageView.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -39,11 +39,6 @@ public class ProfileEditActivity extends AppCompatActivity {
                 startActivityForResult(photoPickerIntent, Pick_image);
             }
         });
-
-        v_name = findViewById(R.id._name);
-        v_surname = findViewById(R.id._surname);
-        v_lastname = findViewById(R.id._lastname);
-        v_tel = findViewById(R.id._tel);
     }
 
     ///Обрабатываем результат выбора в галерее:
@@ -65,25 +60,11 @@ public class ProfileEditActivity extends AppCompatActivity {
                 }
         }
     }
-
+    public void back (View v){
+        onBackPressed();
+    }
     ///
 
-    public void onClick(View view) { //передает значения на другой экран, нужно их связать
-        String V_name = v_name.getText().toString();
-        String V_surname = v_surname.getText().toString();
-        String V_lastname = v_lastname.getText().toString();
-        String V_tel = v_tel.getText().toString();
-        if(V_name.isEmpty() || V_surname.isEmpty() || V_tel.isEmpty()) { //проверка введены ли данные
-            Toast toast = Toast.makeText(getApplicationContext(), "введите данные!", Toast.LENGTH_SHORT);
-            toast.show();
-        }else {
-            Intent profile = new Intent(ProfileEditActivity.this, ContactsContract.Profile.class);
-            profile.putExtra("v_name", V_name);
-            profile.putExtra("v_surname", V_surname);
-            profile.putExtra("v_lastname", V_lastname);
-            profile.putExtra("v_tel", V_tel);
-            profile.putExtra("Pick_image", Pick_image);
-            startActivity(profile);
-        }
-    }
+
+
 }

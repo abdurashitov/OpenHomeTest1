@@ -18,13 +18,14 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        w_name = findViewById(R.id._name);
-        w_surname = findViewById(R.id._surname);
-        w_lastname = findViewById(R.id._lastname);
-        w_tel = findViewById(R.id._tel);
 
     }
-    public void redact(View view) {
+
+    public void back (View v){
+        onBackPressed();
+    }
+
+    public void setting (View v){
         Intent intent = new Intent(UserProfileActivity.this, ProfileEditActivity.class);
         startActivity(intent);
     }

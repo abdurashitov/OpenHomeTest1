@@ -6,67 +6,137 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".UserProfileActivity">
 
-    tools:context=".ProfileActivity">
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="150dp"
-        android:onClick="setImage"
-        android:src="@drawable/demo_001"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_chevron_left"
+        android:onClick="back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </de.hdodenhof.circleimageview.CircleImageView>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/ic_sliders"
+        android:onClick="setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+            android:onClick="setImage"
+            android:src="@drawable/c2bgaoydqjo">
+        </de.hdodenhof.circleimageview.CircleImageView>
 
         <TextView
             android:id="@+id/editText3"
             android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:text="Имя"
-            android:textColor="#000000"
-            android:textColorHint="#DD2B2B2B" />
-
-        <TextView
-            android:id="@+id/editText2"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:hint="Фамилия "
-            android:inputType="textPersonName"
-            android:textColor="#E1000000"
-            android:textColorHint="#DD2B2B2B" />
-
-        <TextView
-            android:id="@+id/editText4"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:hint="Очество"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textColorHint="#DD2B2B2B" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:maxLines="2"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:singleLine="false"
+            android:text="Ватсон Эмма Дуэр"
+            android:textAlignment="center"
+            android:textColor="@color/Dark_jungle_green"
+            android:textColorHint="#DD2B2B2B"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/editText5"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:ems="10"
-            android:hint="Дата рождения"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textColorHint="#DD2B2B2B" />
+            android:text="24.04.2020"
+            android:textAlignment="center"
+            android:textColor="@color/Dark_jungle_green"
+            android:textColorHint="#DD2B2B2B"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Jade"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="Контактные данные "
+            android:textAlignment="center"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textPhoneNumber"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_group_26"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="+79780101010"
+            android:textAlignment="center"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_mail"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="test@mail.ru"
+            android:textAlignment="center"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_bx_bxl_telegram"
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:text="\@emma_waston"
+            android:textAlignment="center"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
     </LinearLayout>
 
 

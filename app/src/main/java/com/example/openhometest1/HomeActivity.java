@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,11 +35,17 @@ public class HomeActivity extends AppCompatActivity {
 
     private List<Home> states = new ArrayList();
     ListView countriesList;
+    Dialog addHome;
+    Button connectBtn;
+    EditText editTokenText;
+    ImageView scanImageView, closeImage;
+    TextView createHomeDialog;
     private static final String url = "https://lydesiapi.herokuapp.com/api/apartments";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        addHome =  new Dialog(this);
         demo();
         load();
 
@@ -86,16 +99,36 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void demo(){
-        states.add(new Home ("demo1", "demo1", "demo1"));
-        states.add(new Home ("demo2", "demo2", "demo2"));
-        states.add(new Home ("demo3", "demo3", "demo3"));
-        states.add(new Home ("demo4", "demo4", "demo4"));
-        states.add(new Home ("demo5", "demo5", "demo5"));
+        states.add(new Home ("Дом - Иванова М.А", "35.000","Оплата 10 Апреля, 2020" ));
+        states.add(new Home ("Дом - Иванова М.А", "35.000","Оплата 10 Апреля, 2020" ));
+        states.add(new Home ("Дом - Иванова М.А", "35.000","Оплата 10 Апреля, 2020" ));
+        states.add(new Home ("Дом - Иванова М.А", "35.000","Оплата 10 Апреля, 2020" ));
+        states.add(new Home ("Дом - Иванова М.А", "35.000","Оплата 10 Апреля, 2020" ));
         SetView();
     }
-    public void next(View v){
-        Intent intent = new Intent(HomeActivity.this, NewHomeActivity.class);
-        startActivity(intent);
-    }
 
+    public void add_new_home(View v){
+        addHome.setContentView(R.layout.add_home_dialog);
+        connectBtn = addHome.findViewById(R.id.dialog_btn_conect);
+        editTokenText = addHome.findViewById(R.id.dialog_token_edit);
+        scanImageView = addHome.findViewById(R.id.dialog_scan_image);
+        closeImage = addHome.findViewById(R.id.dialog_close_image);
+        createHomeDialog = addHome.findViewById(R.id.dialog_create_text);
+        createHomeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AddHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        closeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addHome.dismiss();
+            }
+        });
+        addHome.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        addHome.show();
+
+    }
 }
