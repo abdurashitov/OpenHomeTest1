@@ -21,19 +21,38 @@ import org.json.JSONObject;
 
 public class ScrinHomeActivity extends AppCompatActivity {
     Apartments apartments;
-    TextView textView;
+    TextView textViewHomeTitel, id_home, textViewPrece, textViewCreater, textViewRenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrin_home);
         Intent intent = getIntent();
-        textView = findViewById(R.id.id_home);
+
+        textViewHomeTitel= findViewById(R.id.textViewHomeTitel);
+        id_home= findViewById(R.id.id_home);
+        textViewPrece= findViewById(R.id.textViewPrece);
+        textViewCreater= findViewById(R.id.textViewCreater);
+        textViewRenter= findViewById(R.id.textViewRenter);
         Bundle arguments = getIntent().getExtras();
         apartments = (Apartments) arguments.getSerializable(Apartments.class.getSimpleName());
         //Log.d("apart", apartments.getjson().toString());
-        textView.setText(apartments.getId());
+        textViewHomeTitel.setText(apartments.title);
+        id_home.setText(apartments.getId());
+        textViewPrece.setText(apartments.getPrice());
+        //textViewCreater.setText(apartments.creatorId);
+        //textViewRenter.setText(apartments.renterId);
+        Log.d("TAG", apartments.getjson2().toString());
+        /*if(apartments.creator.firstName.equals("")){
+            try {
+                textViewCreater.setText((apartments.getJO().getJSONObject("creator").getString("firstName")));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        if(apartments.renter.firstName.equals("")){
+            textViewRenter.setText((apartments.renter.firstName+apartments.creator.lastName));
+        }*/
     }
-
     //вернутся на предыдущий экран
     public void back (View v){
         onBackPressed();
@@ -46,17 +65,15 @@ public class ScrinHomeActivity extends AppCompatActivity {
 
     }
     public void laoadNewDogovor (View v){
-
     }
     public void laoadNewShablon (View v){
-
     }
     public void buttonGenerateDogovor (View v){
         Log.d("url" , "generate");
         String id_creator, id_respon;
-        //id_creator = apartments.creator.getId();
-        //id_respon = apartments.renter.getId();
-        String url = "https://lydesiapi.herokuapp.com/api/pdf/"+"5e9b8733243d3433947f0421"+"/"+"5ea37a18aa959b001759afda";
+        id_creator = apartments.creatorId;
+        id_respon = apartments.renterId;
+        String url = "https://lydesiapi.herokuapp.com/api/pdf/"+id_creator+"/"+id_respon;
         Log.d("url" , url);
         try {
             /** json object parameter**/
@@ -69,7 +86,7 @@ public class ScrinHomeActivity extends AppCompatActivity {
             jsonArray.put("4");
             jsonObject.put( "renterFamily", jsonArray);
             Log.e("jsonObject params", jsonObject.toString() + "");
-            /**URL */
+            /** URL **/
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
@@ -83,7 +100,6 @@ public class ScrinHomeActivity extends AppCompatActivity {
             });
             RequestQueue queue = Volley.newRequestQueue(this);
             queue.add(jsonObjectRequest);
-
         } catch (JSONException e) {
             Log.d("TAG", e.toString());
         }

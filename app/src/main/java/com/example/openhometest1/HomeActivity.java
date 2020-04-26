@@ -65,7 +65,10 @@ public class HomeActivity extends AppCompatActivity {
                             for (int i=0; i<jsonArray.length(); ++i) {
                                 JSONObject itemObj = jsonArray.getJSONObject(i);
                                 Log.d("msg", itemObj.toString());
-                                states.add(new Apartments(itemObj));
+                                Apartments apartments = new Apartments( (JSONObject) itemObj );
+                                Log.d("msg2", apartments.getjson2().toString());
+                                //apartments.setJO(itemObj);
+                                states.add(apartments);
                                /*
                                 String title = itemObj.getString("title");
                                 String price = itemObj.getString("price");

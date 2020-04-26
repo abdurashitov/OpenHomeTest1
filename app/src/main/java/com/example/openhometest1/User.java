@@ -38,6 +38,24 @@ public class User implements Serializable {
     public String getId(){
         return ID;
     }
+    public User(JSONObject jsonObject) {
+        try {
+            this.firstName = jsonObject.getString("firstName");
+            this.lastName = jsonObject.getString("last_name");
+            this.moderated = jsonObject.getBoolean("moderated");
+            this.date = jsonObject.getString("date");;
+            this.ID = jsonObject.getString("_id");
+            this.photoUrl = "photoUrl";
+            this.contact = new Contact();
+            this.dateAndBirthPlace = jsonObject.getString("dateAndBirthPlace");
+            this.passportSeriesAndNumber = jsonObject.getString("passportSeriesAndNumber");
+            this.passportIssuedBy = jsonObject.getString("passportIssuedBy");
+            this.passportIssuedDate = jsonObject.getString("passportIssuedDate");
+            this.passportIssuedAddress = jsonObject.getString("stringpassportIssuedAddress");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     public User(String firstName, String last_name , String date, String id) {
         this.firstName = firstName;
         this.lastName = last_name;

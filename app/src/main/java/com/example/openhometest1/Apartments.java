@@ -2,6 +2,7 @@ package com.example.openhometest1;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,15 +12,27 @@ import java.io.Serializable;
 public class Apartments implements Serializable {
         String id="";
         String title="";
-        String date="";
+        String date= " ";
         int    price=0;
         String address="";
         String description="";
+        String creatorId="";
+        String renterId="";
         int    area=0;
         int    rooms=0;
         User   creator;
         User   renter;
         int    utilities =0;
+/*        JSONObject jo = new JSONObject();
+
+
+
+    public void setJO(JSONObject jo1){
+       this.jo = jo1;
+    }
+    public JSONObject getJO(){
+        return jo;
+    }*/
 
     public String getId() {
         return id;
@@ -27,14 +40,6 @@ public class Apartments implements Serializable {
 
     public String getDate() {
         return date;
-    }
-
-
-    public String getCreaterId() {
-        return creator.ID;
-    }
-    public String getRenterId() {
-        return renter.ID;
     }
 
 
@@ -56,10 +61,8 @@ public class Apartments implements Serializable {
             this.description = jsonObject.getString("description");
             this.area = jsonObject.getInt("area");
             this.rooms = jsonObject.getInt("rooms");
-            JSONObject jsonObject1 = jsonObject.getJSONObject("creator");
-            this.creator = new User(jsonObject1.getString("firstName"), jsonObject1.getString("lastName"),jsonObject1.getString("date"),jsonObject1.getString("_id"));
-            JSONObject jsonObject2 = jsonObject.getJSONObject("renter");
-            this.renter = new User(jsonObject2.getString("firstName"), jsonObject2.getString("lastName"),jsonObject2.getString("date"),jsonObject2.getString("_id") );
+            this.creatorId = jsonObject.getString("creatorId");
+            this.renterId = jsonObject.getString("renterId");
             this.utilities = jsonObject.getInt("utilities");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -81,6 +84,11 @@ public class Apartments implements Serializable {
             jsonObject.put(  "title",    this.title);
             jsonObject.put(  "price",    this.price);
             jsonObject.put(  "address",  this.address);
+            JSONArray jsonArray = new JSONArray();
+            jsonArray.put("1");
+            jsonArray.put("2");
+            jsonObject.put( "images", jsonArray);
+            jsonObject.put( "description", "description");
             jsonObject.put(  "area",     this.area);
             jsonObject.put(  "utilities",this.utilities);
             jsonObject.put(  "rooms",    this.rooms);
@@ -94,16 +102,16 @@ public class Apartments implements Serializable {
     public JSONObject getjson2(){
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put(  "title",    this.title);
-            jsonObject.put(   "data", this.data);
-            jsonObject.put(  "price",    this.price);
+            jsonObject.put(  "data",     this.date);
             jsonObject.put(  "address",  this.address);
+            jsonObject.put(  "title",    this.title);
+            jsonObject.put(  "price",    this.price);
+            jsonObject.put(  "description", this.description);
             jsonObject.put(  "area",     this.area);
             jsonObject.put(  "utilities",this.utilities);
             jsonObject.put(  "rooms",    this.rooms);
-            jsonObject.put("", );
-
-            Log.d("JSONObject", jsonObject.toString());
+            jsonObject.put(  "creator",    this.creatorId);
+            jsonObject.put(  "renter",    this.renterId);
         } catch (JSONException e) {
             e.printStackTrace();
         }

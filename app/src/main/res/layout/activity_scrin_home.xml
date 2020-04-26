@@ -27,133 +27,193 @@
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/c2bgaoydqjo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-    </de.hdodenhof.circleimageview.CircleImageView>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/c2bgaoydqjo"
+    <TextView
+        android:id="@+id/textViewHomeTitel"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:hint="Название Дома"
+        android:textColor="@color/Dark_jungle_green"
+        android:textColorHint="@color/Dark_jungle_green"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    </de.hdodenhof.circleimageview.CircleImageView>
+    <View
+        android:id="@+id/view3"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/head"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_home" />
 
     <TextView
         android:id="@+id/id_home"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textIsSelectable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHomeTitel"
         tools:text="Home ID" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_border_button"
+        android:onClick="btnOplata"
+        android:shadowColor="#FFFFFF"
+        android:text="Оплатить"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrece" />
+
+    <TextView
+        android:id="@+id/textViewPrece"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="35.000 руб"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/id_home">
+        app:layout_constraintTop_toBottomOf="@+id/view3">
 
-        <Button
-            android:id="@+id/buttonGenerateDogovor"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_register_send"
-            android:onClick="buttonGenerateDogovor"
-            android:text="Сгенерировать договор "
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"></Button>
-
-        <Button
-            android:id="@+id/laoadNewShablon"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_register_send"
-            android:onClick="laoadNewShablon"
-            android:text="Загрузить шаблон договора"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"></Button>
-
-        <Button
-            android:id="@+id/laoadNewDogovor"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_register_send"
-            android:onClick="laoadNewDogovor"
-            android:text="Загрузить готовый договор"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"></Button>
-
-        <Button
-            android:id="@+id/CloseDogovor"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_register_send"
-            android:onClick="CloseDogovor"
-            android:text="Расторгнуть договор"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"></Button>
-
-        <Button
-            android:id="@+id/btnOplata"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/button_register_send"
-            android:onClick="btnOplata"
-            android:text="Оплатить"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"></Button>
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:src="@drawable/c2bgaoydqjo"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:text="Арендодатель"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewCreater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:text="Иванов Иван Иванович " />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:src="@drawable/c2bgaoydqjo"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:text="Арендующий"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewRenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:text="Иванов Иван Иванович " />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:background="@color/Gainsboro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/laoadNewDogovor"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_register_send"
+                android:onClick="laoadNewDogovor"
+                android:text="Загрузить готовый договор"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"></Button>
+
+            <Button
+                android:id="@+id/buttonGenerateDogovor"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_register_send"
+                android:onClick="buttonGenerateDogovor"
+                android:text="Сгенерировать договор "
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"></Button>
 
             <TextView
                 android:id="@+id/textView6"
@@ -166,17 +226,45 @@
                 android:textColor="@color/Manatee"></TextView>
 
             <View
-                android:id="@+id/textView21"
+                android:id="@+id/View"
                 android:layout_width="300dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/add_new_home_btn"
-                android:onClick="add_new_home"
                 android:textAlignment="center"
                 android:textColor="@color/Manatee" />
+
+            <Button
+                android:id="@+id/CloseDogovor"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_register_send"
+                android:onClick="CloseDogovor"
+                android:text="Расторгнуть договор"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"></Button>
         </LinearLayout>
 
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/montserrat_alternates_medium"
+        android:hint="Оплата"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        android:layout_width="0dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

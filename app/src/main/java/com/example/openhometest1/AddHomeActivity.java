@@ -73,12 +73,10 @@ public class AddHomeActivity extends AppCompatActivity {
         User user1 = new User("alex", "abdurashitov", "03.07.2020");
         Apartments apartments = new Apartments(str_add_home_editText, str_add_home_price,str_add_home_adress,str_add_home_vid,str_add_comnat,str_add_home_water);
         postUser(apartments);
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
     }
 
     public void back(View view) {
-        Intent intent = new Intent(this, AddHomeActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
     public void postUser(Apartments apartments){
@@ -88,7 +86,6 @@ public class AddHomeActivity extends AppCompatActivity {
             String url = "https://lydesiapi.herokuapp.com/api/apartments";
             final JSONObject jsonObject = apartments.getjson1();
             Log.e("jsonObject params", jsonObject.toString() + "");
-            /**URL */
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
@@ -105,20 +102,8 @@ public class AddHomeActivity extends AppCompatActivity {
                 @Override
                 public Map<String, String> getHeaders()  {
                     HashMap<String, String> headers = new HashMap<>();
-                    headers.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc2ODdkMGRlZjQ5MTM2ZGM2YjNmOGQiLCJpYXQiOjE1ODQ5MDk3MjZ9.1s-it-HR50dr54AV72agBmYAgjWkzK3h-dA3epdMnyk");
+                    headers.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTliODczMzI0M2QzNDMzOTQ3ZjA0MjEiLCJpYXQiOjE1ODc4NTY1NzV9.ogNpU668A1I1GDmqs5B1_4zlodf6TwR7uMvnXC6z6MY");
                     return headers;
-                }
-                ////
-                @Override
-                public byte[] getBody() {
-
-                    try {
-                        Log.i("json", jsonObject.toString());
-                        return jsonObject.toString().getBytes("UTF-8");
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                    }
-                    return null;
                 }
             };;
             RequestQueue queue = Volley.newRequestQueue(this);

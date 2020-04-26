@@ -43,7 +43,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             price = itemView.findViewById(R.id.price);
         }
     }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -71,6 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 itemViewHolder.price.setText(home.getPrice());
         }
         viewHolder.itemView.setOnClickListener (new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 TextView textView1 = v.findViewById(R.id.name);
