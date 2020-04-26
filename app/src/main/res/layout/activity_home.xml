@@ -22,7 +22,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:onClick="openUserProfile"
-            android:src="@drawable/c2bgaoydqjo">
+            android:src="@android:mipmap/sym_def_app_icon">
 
         </de.hdodenhof.circleimageview.CircleImageView>
 

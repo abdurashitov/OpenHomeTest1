@@ -129,7 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
                 @Override
                 public Map<String, String> getHeaders()  {
                     HashMap<String, String> headers = new HashMap<>();
-                    headers.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWEzN2ExOGFhOTU5YjAwMTc1OWFmZGEiLCJpYXQiOjE1ODc3OTU4OTh9.2gc7o7G9ehiogLkSCS2uqwiVeNhjAPW9cxQ3G5wnBqM");
+                    headers.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTliODczMzI0M2QzNDMzOTQ3ZjA0MjEiLCJpYXQiOjE1ODc4NTY1NzV9.ogNpU668A1I1GDmqs5B1_4zlodf6TwR7uMvnXC6z6MY");
                     return headers;
                 }
                 ////

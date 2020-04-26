@@ -59,6 +59,7 @@ public class ScrinHomeActivity extends AppCompatActivity {
     }
     public void btnOplata (View v){
         Intent intent = new Intent(ScrinHomeActivity.this, OplataActivity.class);
+        intent.putExtra("pr", apartments.getPrice());
         startActivity(intent);
     }
     public void CloseDogovor (View v){
@@ -106,5 +107,9 @@ public class ScrinHomeActivity extends AppCompatActivity {
         catch (Exception e) {
             Log.e("TAG", e.toString());
         }
+    }
+    public void openList(View view) {
+        Intent intent = new Intent(ScrinHomeActivity.this, CheckList.class);
+        startActivity(intent);
     }
 }

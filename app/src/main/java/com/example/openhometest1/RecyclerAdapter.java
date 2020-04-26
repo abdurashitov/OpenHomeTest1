@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -38,7 +37,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name);
+            name = itemView.findViewById(R.id.usluga);
             data = itemView.findViewById(R.id.data);
             price = itemView.findViewById(R.id.price);
         }
@@ -73,7 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             @Override
             public void onClick(View v) {
-                TextView textView1 = v.findViewById(R.id.name);
+                TextView textView1 = v.findViewById(R.id.usluga);
                 Intent intent = new Intent(context, ScrinHomeActivity.class);
                 intent.putExtra(Apartments.class.getSimpleName(), listRecyclerItem.get(i));
                 context.startActivity(intent);
@@ -81,7 +80,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return listRecyclerItem.size();
